@@ -8,7 +8,7 @@ A = np.array([[2, 1],
               [1, 3],
               [5, 4]])
 
-a, b = np.linalg.solve(A, w)
+a, b = np.linalg.lstsq(A, w, rcond=None)[0]
 
 print("a =", a)
 print("b =", b)
