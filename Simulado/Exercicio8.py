@@ -4,17 +4,18 @@ u = np.array([3, 2])
 v = np.array([1, 5])
 w = np.array([8, 13])
 
-A = np.array([[3, 1],
-              [2, 5]])
+A = np.column_stack((u, v))
 
-a, b = np.linalg.solve(A, w)
+try:
+    coef = np.linalg.solve(A, w)
+    a, b = coef
 
-print("a =", a)
-print("b =", b)
+    print(f"a = {a}, b = {b}")
 
-wCalculado = a * u + b * v
+    if a != 0 and b != 0:
+        print("w é uma combinação linear para os valores de a e b")
+    else:
+        print("não é combinação linear")
 
-if np.isclose(wCalculado, w):
-    print("w É uma combinação linear para os valores de a e b")
-else:
-    print("Não é combinação linear")
+except np.linalg.LinAlgError:
+    print("não é combinação linear")

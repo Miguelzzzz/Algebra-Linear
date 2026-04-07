@@ -1,7 +1,7 @@
 import numpy as np
 
-u = np.array(list(map(float, input("Digite os valores de u: ").split())))
-v = np.array(list(map(float, input("Digite os valores de v: ").split())))
+u = np.array(list(map(float, input().split())))
+v = np.array(list(map(float, input().split())))
 
 produtoEscalar = np.dot(u, v)
 
